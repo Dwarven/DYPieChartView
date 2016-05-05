@@ -33,6 +33,8 @@
     
     pieChartView = [[DYPieChartView alloc] initWithFrame:CGRectMake(0, 0, size, size)];
 //    pieChartView.backgroundColor = [UIColor lightGrayColor];
+    pieChartView.startAngle = -M_PI/2;
+    pieChartView.clockwise = NO;
     pieChartView.center = self.view.center;
     pieChartView.sectorColors = @[MakeColor(120, 110, 230),
                                   MakeColor(110, 240, 190),
