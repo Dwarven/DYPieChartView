@@ -14,6 +14,7 @@
 		DFD2C1F31CDB5E550065D7A0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DFD2C1F21CDB5E550065D7A0 /* Assets.xcassets */; };
 		DFD2C2011CDB5E550065D7A0 /* PieChartTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DFD2C2001CDB5E550065D7A0 /* PieChartTests.m */; };
 		DFD2C20C1CDB5E550065D7A0 /* PieChartUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = DFD2C20B1CDB5E550065D7A0 /* PieChartUITests.m */; };
+		DFD2C21C1CDB60360065D7A0 /* DYPieChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = DFD2C21B1CDB60360065D7A0 /* DYPieChartView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,8 @@
 		DFD2C2071CDB5E550065D7A0 /* PieChartUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PieChartUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFD2C20B1CDB5E550065D7A0 /* PieChartUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PieChartUITests.m; sourceTree = "<group>"; };
 		DFD2C20D1CDB5E550065D7A0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DFD2C21A1CDB60360065D7A0 /* DYPieChartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DYPieChartView.h; sourceTree = "<group>"; };
+		DFD2C21B1CDB60360065D7A0 /* DYPieChartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DYPieChartView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +82,7 @@
 		DFD2C1DA1CDB5E550065D7A0 = {
 			isa = PBXGroup;
 			children = (
+				DFD2C2191CDB60280065D7A0 /* Class */,
 				DFD2C1E51CDB5E550065D7A0 /* PieChart */,
 				DFD2C1FF1CDB5E550065D7A0 /* PieChartTests */,
 				DFD2C20A1CDB5E550065D7A0 /* PieChartUITests */,
@@ -135,6 +139,15 @@
 				DFD2C20D1CDB5E550065D7A0 /* Info.plist */,
 			);
 			path = PieChartUITests;
+			sourceTree = "<group>";
+		};
+		DFD2C2191CDB60280065D7A0 /* Class */ = {
+			isa = PBXGroup;
+			children = (
+				DFD2C21A1CDB60360065D7A0 /* DYPieChartView.h */,
+				DFD2C21B1CDB60360065D7A0 /* DYPieChartView.m */,
+			);
+			path = Class;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -269,6 +282,7 @@
 				DFD2C1EE1CDB5E550065D7A0 /* ViewController.m in Sources */,
 				DFD2C1EB1CDB5E550065D7A0 /* AppDelegate.m in Sources */,
 				DFD2C1E81CDB5E550065D7A0 /* main.m in Sources */,
+				DFD2C21C1CDB60360065D7A0 /* DYPieChartView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

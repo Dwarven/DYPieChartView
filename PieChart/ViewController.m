@@ -7,8 +7,15 @@
 //
 
 #import "ViewController.h"
+#import "DYPieChartView.h"
 
-@interface ViewController ()
+#define MakeColor(r, g, b) [UIColor colorWithRed:(r/255.0f) green:(g/255.0f) blue:(b/255.0f) alpha:1.0f]
+
+@interface ViewController () {
+    DYPieChartView * pieChartView;
+    NSInteger _index;
+    NSArray * _array;
+}
 
 @end
 
@@ -16,12 +23,46 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    
+    _array = @[@[@(0.4), @(0.35), @(0.25), @(0.0), @(0.0)],
+               @[@(0.1), @(0.2), @(0.3), @(0.25), @(0.15)],
+               @[@(0.3), @(0.35), @(0.25), @(0.0), @(0.0)],
+               @[@(0.0), @(0.0), @(0.0), @(0.0), @(0.0)]];
+    
+    CGFloat size = 300;
+    
+    pieChartView = [[DYPieChartView alloc] initWithFrame:CGRectMake(0, 0, size, size)];
+//    pieChartView.backgroundColor = [UIColor lightGrayColor];
+    pieChartView.center = self.view.center;
+    pieChartView.sectorColors = @[MakeColor(120, 110, 230),
+                                  MakeColor(110, 240, 190),
+                                  MakeColor(10, 220, 230),
+                                  MakeColor(240, 140, 10),
+                                  MakeColor(230, 10, 100)
+                                  ];
+    
+    
+    [self.view addSubview:pieChartView];
+}
+
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    switch (_index) {
+        case 0:
+        case 1:
+        case 2:
+            [pieChartView animateToScaleValues:_array[_index] duration:2];
+            _index++;
+            break;
+            
+        default:
+            [pieChartView setScaleValues:_array[_index]];
+            _index = 0;
+            break;
+    }
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 @end
