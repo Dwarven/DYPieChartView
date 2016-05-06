@@ -12,7 +12,7 @@
 #define MakeColor(r, g, b) [UIColor colorWithRed:(r/255.0f) green:(g/255.0f) blue:(b/255.0f) alpha:1.0f]
 
 @interface ViewController () {
-    DYPieChartView * pieChartView;
+    DYPieChartView * _pieChartView;
     NSInteger _index;
     NSArray * _array;
 }
@@ -31,12 +31,12 @@
     
     CGFloat size = 300;
     
-    pieChartView = [[DYPieChartView alloc] initWithFrame:CGRectMake(0, 0, size, size)];
-//    pieChartView.backgroundColor = [UIColor lightGrayColor];
-    pieChartView.startAngle = -M_PI/2;
-    pieChartView.clockwise = NO;
-    pieChartView.center = self.view.center;
-    pieChartView.sectorColors = @[MakeColor(120, 110, 230),
+    _pieChartView = [[DYPieChartView alloc] initWithFrame:CGRectMake(0, 0, size, size)];
+//    _pieChartView.backgroundColor = [UIColor lightGrayColor];
+    _pieChartView.startAngle = -M_PI/2;
+    _pieChartView.clockwise = NO;
+    _pieChartView.center = self.view.center;
+    _pieChartView.sectorColors = @[MakeColor(120, 110, 230),
                                   MakeColor(110, 240, 190),
                                   MakeColor(10, 220, 230),
                                   MakeColor(240, 140, 10),
@@ -44,7 +44,7 @@
                                   ];
     
     
-    [self.view addSubview:pieChartView];
+    [self.view addSubview:_pieChartView];
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
@@ -52,12 +52,12 @@
         case 0:
         case 1:
         case 2:
-            [pieChartView animateToScaleValues:_array[_index] duration:2];
+            [_pieChartView animateToScaleValues:_array[_index] duration:2];
             _index++;
             break;
             
         default:
-            [pieChartView setScaleValues:_array[_index]];
+            [_pieChartView setScaleValues:_array[_index]];
             _index = 0;
             break;
     }
