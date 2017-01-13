@@ -35,6 +35,7 @@
 //    _pieChartView.backgroundColor = [UIColor lightGrayColor];
     _pieChartView.startAngle = -M_PI/2;
     _pieChartView.clockwise = NO;
+    _pieChartView.lineWidth = @(10);
     _pieChartView.center = self.view.center;
     _pieChartView.sectorColors = @[MakeColor(120, 110, 230),
                                   MakeColor(110, 240, 190),

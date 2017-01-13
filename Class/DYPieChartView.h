@@ -11,9 +11,9 @@
 @interface DYPieChartView : UIView
 
 /**
-*  An array of float values to define the values of each sector of the pie-chart.
-*  e.g. @[@(0.4), @(0.35), @(0.25), @(0.0), @(0.0)]
-*/
+ *  An array of float values to define the values of each sector of the pie-chart.
+ *  e.g. @[@(0.4), @(0.35), @(0.25), @(0.0), @(0.0)]
+ */
 @property (nonatomic) NSArray* scaleValues;
 
 /**
@@ -30,6 +30,13 @@
  *  The direction in which to draw the arc.
  */
 @property (nonatomic) BOOL clockwise;
+
+/**
+ *  The line width used when stroking the path.
+ *  Valid condition: 0 < lineWidth < pie chart radius.
+ *  Defaults to nil.
+ */
+@property (nonatomic) NSNumber * lineWidth;
 
 /**
  *  Animates the scale values from their current values to a new set of values.

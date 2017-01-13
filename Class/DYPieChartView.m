@@ -58,10 +58,11 @@
     }
     
     CGFloat radius = self.bounds.size.width*0.5;
-    UIBezierPath *sectorLayerPath = [UIBezierPath bezierPathWithArcCenter:(CGPoint){radius, radius} radius:radius/2 startAngle:_startAngle endAngle:_clockwise?_startAngle+M_PI*2:_startAngle-M_PI*2 clockwise:_clockwise];
+    BOOL lineWidthValid = _lineWidth && _lineWidth.floatValue > 0 && _lineWidth.floatValue < radius;
+    UIBezierPath *sectorLayerPath = [UIBezierPath bezierPathWithArcCenter:(CGPoint){radius, radius} radius:lineWidthValid ? radius - _lineWidth.floatValue/2 : radius/2 startAngle:_startAngle endAngle:_clockwise?_startAngle+M_PI*2:_startAngle-M_PI*2 clockwise:_clockwise];
     for (CAShapeLayer* s in _sectorLayers) {
         s.path = sectorLayerPath.CGPath;
-        s.lineWidth = radius;
+        s.lineWidth = lineWidthValid ? _lineWidth.floatValue : radius;
     }
     
     NSUInteger colorCount = _sectorColors.count;
@@ -70,7 +71,7 @@
         CAShapeLayer* sectorLayer = [CAShapeLayer layer];
         sectorLayer.path = sectorLayerPath.CGPath;
         sectorLayer.fillColor = [UIColor clearColor].CGColor;
-        sectorLayer.lineWidth = radius;
+        sectorLayer.lineWidth = lineWidthValid ? _lineWidth.floatValue : radius;;
         sectorLayer.strokeColor = (sectorLayerCount < colorCount)?((UIColor*)_sectorColors[sectorLayerCount]).CGColor:[UIColor clearColor].CGColor;
         if (sectorLayerCount != 0) {
             CAShapeLayer* previousLayer = _sectorLayers[sectorLayerCount-1];
