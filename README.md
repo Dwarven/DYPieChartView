@@ -8,7 +8,10 @@
 Animated Pie Chart using Custom CALayer.
 
 #Preview
+##lineWidth:Defaults to nil
 ![Demo Gif](https://raw.githubusercontent.com/Dwarven/DYPieChartView/master/demo.gif)
+##lineWidth:10
+![Demo Gif](https://raw.githubusercontent.com/Dwarven/DYPieChartView/master/demo-lineWidth.gif)
 
 # Podfile
 To integrate DYPieChartView into your Xcode project using CocoaPods, specify it in your `Podfile`:
@@ -29,6 +32,7 @@ _pieChartView = [[DYPieChartView alloc] initWithFrame:CGRectMake(0, 0, 300, 300)
 //_pieChartView.backgroundColor = [UIColor lightGrayColor];
 _pieChartView.startAngle = -M_PI/2;
 _pieChartView.clockwise = NO;
+_pieChartView.lineWidth = @(10);
 _pieChartView.center = self.view.center;
 _pieChartView.sectorColors = @[MakeColor(120, 110, 230),
                                MakeColor(110, 240, 190),
