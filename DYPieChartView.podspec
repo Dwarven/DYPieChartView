@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name                  = 'DYPieChartView'
-  s.version               = '0.0.3'
+  s.version               = '0.0.4'
   s.summary               = 'Animated Pie Chart using Custom CALayer.'
   s.homepage              = 'https://github.com/Dwarven/DYPieChartView'
   s.ios.deployment_target = '7.0'
