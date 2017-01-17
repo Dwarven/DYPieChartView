@@ -17,6 +17,12 @@
 @property (nonatomic) NSArray* scaleValues;
 
 /**
+ *  The cap style used when stroking the path. Options are `butt', `round' and `square'.
+ *  Defaults to `butt'.
+ */
+@property(copy) NSString *lineCap;
+
+/**
  *  An array of UIColors to define the colors of the sectors.
  */
 @property (nonatomic) NSArray* sectorColors;

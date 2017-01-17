@@ -17,6 +17,14 @@
 
 @implementation DYPieChartView
 
+- (void)dealloc{
+    if (_sectorLayers) {
+        [_sectorLayers removeAllObjects];
+    }
+    _sectorLayers = nil;
+    _cumulativeSectorValues = nil;
+}
+
 - (id)init {
     self = [super init];
     if (self) {
@@ -71,7 +79,10 @@
         CAShapeLayer* sectorLayer = [CAShapeLayer layer];
         sectorLayer.path = sectorLayerPath.CGPath;
         sectorLayer.fillColor = [UIColor clearColor].CGColor;
-        sectorLayer.lineWidth = lineWidthValid ? _lineWidth.floatValue : radius;;
+        sectorLayer.lineWidth = lineWidthValid ? _lineWidth.floatValue : radius;
+        if (_lineCap) {
+            sectorLayer.lineCap = _lineCap;
+        }
         sectorLayer.strokeColor = (sectorLayerCount < colorCount)?((UIColor*)_sectorColors[sectorLayerCount]).CGColor:[UIColor clearColor].CGColor;
         if (sectorLayerCount != 0) {
             CAShapeLayer* previousLayer = _sectorLayers[sectorLayerCount-1];
