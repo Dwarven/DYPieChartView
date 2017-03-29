@@ -7,10 +7,10 @@
 
 Animated Pie Chart using Custom CALayer.
 
-#Preview
-##lineWidth:Defaults to nil
+# Preview
+## lineWidth:Defaults to nil
 ![Demo Gif](https://raw.githubusercontent.com/Dwarven/DYPieChartView/master/demo.gif)
-##lineWidth:10
+## lineWidth:10
 ![Demo Gif](https://raw.githubusercontent.com/Dwarven/DYPieChartView/master/demo-lineWidth.gif)
 
 # Podfile
